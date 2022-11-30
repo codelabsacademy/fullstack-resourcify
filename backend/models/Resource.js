@@ -25,6 +25,10 @@ const ResourceSchema = new Schema(
       type: Array,
       required: false,
     },
+    type: {
+      type: String,
+      required: true,
+    }
   },
   { timestamps: true }
 );

@@ -14,13 +14,13 @@ const getAndCheckOwnership = async (id, user_id) => {
     }
     return resource;
   } catch (error) {
-    throw new Error("Error finding the resource!");
+    throw new Error(error.message);
   }
 };
 
 // Create a resource
 const createResource = async (req, res) => {
-  const { title, description, tags } = req.body;
+  const { title, description, tags, type } = req.body;
 
   //add to a database
   try {
@@ -28,6 +28,7 @@ const createResource = async (req, res) => {
       title,
       description,
       tags,
+      type,
       postedBy: req.user._id,
     });
     res.status(201).json(resource);
@@ -99,7 +100,7 @@ const deleteResource = async (req, res) => {
 
     res.status(200).json({message: "Resource deleted successfully!",data:resource});
   } catch (error) {
-    res.status(400).json({message: "Error deleting resource"});
+    res.status(400).json({message: error.message});
   }
 };
 
