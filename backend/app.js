@@ -5,6 +5,7 @@ const cors = require('cors')
 const mongoose = require("mongoose");
 
 const userRoutes = require("./routes/User");
+const resourceRoutes = require("./routes/Resource");
 
 // Crearting the express app
 const app = express();
@@ -20,6 +21,7 @@ app.use((req, res, next) => {
 
 //Registeered routes
 app.use("/api/users", userRoutes);
+app.use("/api/resources", resourceRoutes);
 
 mongoose
   .connect(process.env.MONGODB_URL)
