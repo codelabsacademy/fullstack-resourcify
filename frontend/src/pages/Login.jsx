@@ -45,14 +45,14 @@ export default function Login() {
         </div>
         {error && <span className="text-red-500 p-2">{error.message}</span>}
         <div>
-<button
-  onClick={handleLogin}
-  disabled={isLoading}
-  className="btn btn-square w-full bg-gray-100 text-gray-600 hover:bg-gray-300 border-none"
->
-  {isLoading && 'A moment please!'}
-  {!isLoading && 'Login'}
-</button>
+          <button
+            onClick={handleLogin}
+            disabled={isLoading}
+            className="btn btn-square w-full bg-gray-100 text-gray-600 hover:bg-gray-300 border-none"
+          >
+            {isLoading && "A moment please!"}
+            {!isLoading && "Login"}
+          </button>
         </div>
       </div>
     </>
