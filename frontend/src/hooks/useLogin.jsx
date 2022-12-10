@@ -23,7 +23,7 @@ export const useLogin = () => {
         body: JSON.stringify({ email, password }),
       });
 
-      let json = [];
+      let json;
 
       try {
         json = await response.json();
@@ -31,7 +31,7 @@ export const useLogin = () => {
         console.log("catch", error);
       }
 
-      console.log(json);
+      console.log("json", json);
 
       if (json.name === "Error") {
         setError(json.message);
