@@ -2,10 +2,16 @@ import React from "react";
 import { useContext } from "react";
 import { Link } from "react-router-dom";
 import { Auth } from "../contexts/Auth";
+import { useLogout } from "../hooks/useLogout";
 
 export default function UserDropdown() {
   const { user } = useContext(Auth);
+  const { logout } = useLogout();
   console.log("Rendering: UserDropdown");
+
+  const handleLogout = () => {
+    logout();
+  };
   return (
     <div className="dropdown dropdown-end">
       {!user && (
@@ -37,9 +43,9 @@ export default function UserDropdown() {
             <li>
               <a>Settings</a>
             </li>
-            <li>
-              <button>Logout</button>
-            </li>
+<li>
+    <button onClick={handleLogout}>Logout</button>
+</li>
           </>
         </ul>
       )}

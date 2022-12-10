@@ -1,30 +1,32 @@
-import { useState } from "react";
 import { BrowserRouter, Navigate, Route, Routes } from "react-router-dom";
 import "./App.css";
 import Navbar from "./components/Navbar";
 import Home from "./pages/Home";
 import Login from "./pages/Login";
-import EditUser from "./pages/EditUser";
+import { useContext } from "react";
+import { Auth } from "./contexts/Auth";
 
 const test = "CLA";
 
 function App() {
-  const [name, setName] = useState(test);
+  const { user } = useContext(Auth);
   console.log("Rendering: App");
 
   return (
     <BrowserRouter>
       <div className="h-screen">
-        <Navbar/>
+        <Navbar />
 
         <main className="px-4">
           <Routes>
-            <Route path="/" element={<Home name={name} />} />
             <Route
-              path="/user"
-              element={<EditUser name={name} setName={setName} />}
+              path="/"
+              element={user ? <Home /> : <Navigate to="/login" />}
             />
-            <Route path="/login" element={<Login />} />
+            <Route
+              path="/login"
+              element={!user ? <Login /> : <Navigate to="/" />}
+            />
           </Routes>
         </main>
       </div>
