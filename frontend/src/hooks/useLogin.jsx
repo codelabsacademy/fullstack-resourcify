@@ -13,17 +13,12 @@ export const useLogin = () => {
 
     try {
       const response = await fetch("/api/users/login", {
-        mode: "same-origin",
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({ email, password }),
       });
 
-      const data = await response.text();
-
-      console.log("data", data);
-
-      const json = JSON.parse(data);
+      const json = await response.json();
 
       console.log(json);
 
