@@ -11,7 +11,7 @@ export default function Navbar() {
 
   return (
     <>
-      <div className="navbar bg-base-100 drop-shadow-sm lg:px-20 md:mx-5">
+      <div className="navbar bg-base-100 drop-shadow-sm lg:px-20">
         <div className="flex-1">
           <Link
             to="/"
