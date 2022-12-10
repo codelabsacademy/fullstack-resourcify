@@ -15,7 +15,7 @@ function App() {
   return (
     <BrowserRouter>
       <div className="h-screen">
-        <Navbar name={name} />
+        <Navbar/>
 
         <main className="px-4">
           <Routes>
