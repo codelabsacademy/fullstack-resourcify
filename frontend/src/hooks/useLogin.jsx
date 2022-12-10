@@ -18,9 +18,9 @@ export const useLogin = () => {
         body: JSON.stringify({ email, password }),
       });
 
-      console.log(response)
-
       const json = await response.json();
+
+      console.log(json)
 
       if (json.name === "Error") {
         setError(json.message);
