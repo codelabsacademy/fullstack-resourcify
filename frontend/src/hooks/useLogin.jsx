@@ -19,7 +19,7 @@ export const useLogin = () => {
         body: JSON.stringify({ email, password }),
       });
 
-      const json = await response.json();
+      const json = await response.text();
 
       console.log(json)
 
