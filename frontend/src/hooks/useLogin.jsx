@@ -13,15 +13,19 @@ export const useLogin = () => {
 
     try {
       const response = await fetch("/api/users/login", {
-        mode: "no-cors",
+        mode: "same-origin",
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({ email, password }),
       });
 
-      const json = await response.json();
+      const data = await response.text();
 
-      console.log(json)
+      console.log("data", data);
+
+      const json = JSON.parse(data);
+
+      console.log(json);
 
       if (json.name === "Error") {
         setError(json.message);

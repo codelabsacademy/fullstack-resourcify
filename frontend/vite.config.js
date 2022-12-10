@@ -11,7 +11,7 @@ export default defineConfig({
       "/api": {
         target: "https://resourcify-backend.onrender.com",
         changeOrigin: true,
-        secure: true,
+        secure: false,
       },
     },
   },

@@ -25,10 +25,9 @@ export const AuthProvider = ({ children }) => {
   useEffect(() => {
     const user = JSON.parse(localStorage.getItem("user"));
 
-    if(user) {
-        return dispatch({type: "LOGIN", payload: user})
+    if (user) {
+      return dispatch({ type: "LOGIN", payload: user });
     }
-
   }, []);
 
   return (
