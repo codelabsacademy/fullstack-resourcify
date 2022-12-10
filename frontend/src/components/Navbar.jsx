@@ -3,9 +3,12 @@ import Logo from "../assets/cla.svg";
 import { BiSearchAlt } from "react-icons/bi";
 import { Link } from "react-router-dom";
 import UserDropdown from "./UserDropdown";
+import { useContext } from "react";
+import { Auth } from "../contexts/Auth";
 
-export default function Navbar({ name }) {
+export default function Navbar() {
   console.log("Rendering: Navbar");
+  const [name] = useContext(Auth)
 
   return (
     <>
