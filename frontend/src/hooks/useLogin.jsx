@@ -21,7 +21,13 @@ export const useLogin = () => {
         body: JSON.stringify({ email, password }),
       });
 
-      const json = await response.json();
+      let json = [];
+
+      try {
+        json = await response.json();
+      } catch (error) {
+        console.log("catch", error);
+      }
 
       console.log(json);
 
