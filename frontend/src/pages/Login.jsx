@@ -1,25 +1,23 @@
-import React, { createRef, useRef, useState } from "react";
-import { useLogin } from "../hooks/useLogin";
+import React, { createRef } from "react";
 import { IoIosLogIn } from "react-icons/io";
 
 export default function Login() {
+  console.log("Rendering: Login");
   const email = createRef(null);
   const password = createRef(null);
-  const { login, isLoading, error } = useLogin();
 
-  const handleLogin = async (e) => {
-    e.preventDefault();
-
-    await login(email.current.value, password.current.value);
+  const handleLogin = (e) => {
+    console.log(email.current.value, password.current.value);
   };
   return (
     <>
-      <div className="my-6">
+      <div className="shadow-md md:m-6 p-4 rounded-md flex flex-col gap-6">
         <IoIosLogIn className="block mx-auto text-gray-300" size="6em" />
-        <h1 className="text-center text-2xl text-gray-300">Sign in and start adding resources / Quote</h1>
-      </div>
-      <form className="form-control flex flex-col gap-4">
-        <div>
+        <h1 className="text-center text-2xl text-gray-300">
+          Sign-in to your account
+        </h1>
+
+        <div className="form-control flex flex-col gap-4">
           <label className="input-group">
             <span className="bg-gray-100 text-gray-600">Email</span>
             <input
@@ -42,22 +40,16 @@ export default function Login() {
               className="input input-bordered w-full border-gray-100"
             />
           </label>
-          <label className="label">
-            {error && (
-              <span className="label-text text-error">{error.message}</span>
-            )}
-          </label>
         </div>
         <div>
           <button
             onClick={handleLogin}
-            disabled={isLoading}
             className="btn btn-square w-full bg-gray-100 text-gray-600 hover:bg-gray-300 border-none"
           >
             Login
           </button>
         </div>
-      </form>
+      </div>
     </>
   );
 }

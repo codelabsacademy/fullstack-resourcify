@@ -1,16 +1,17 @@
 import React from "react";
 import { Link } from "react-router-dom";
 import Masonry, { ResponsiveMasonry } from "react-responsive-masonry";
-import { HiPencil } from "react-icons/hi";
 import { FiExternalLink } from "react-icons/fi";
-import { AiOutlineHeart, AiFillHeart } from "react-icons/ai";
+import { AiOutlineHeart } from "react-icons/ai";
 import { RxVideo, RxFileText } from "react-icons/rx";
+import { FcLike } from "react-icons/fc";
 
-export default function Home() {
+export default function Home({name}) {
+  console.log("Rendering: Home");
   return (
     <div className="flex flex-col bg-white m-auto p-auto">
       <h1 className="flex py-5 lg:px-20 md:px-10 mx-5 font-bold text-2xl text-gray-800">
-        Explore
+        Welcome {name}
       </h1>
       <div className="flex overflow-x-scroll text-gray-500 hide-scroll-bar rounded-lg shadow-inner mb-6">
         <div className="flex flex-nowrap lg:ml-10 ml-2 py-2">
@@ -73,13 +74,10 @@ export default function Home() {
                 </button>
                 <div className="flex">
                   <button className="btn btn-circle btn-link hover:bg-gray-100">
-                    {/* <FcLike
-                        size="2em"
-                      /> */}
-                    <AiOutlineHeart className="text-gray-500" size="2em" />
+                    <FcLike size="2em" />
                   </button>
                   <div className="text-xs relative -right-1 text-gray-400">
-                    6
+                    837
                   </div>
                 </div>
               </div>
@@ -92,7 +90,10 @@ export default function Home() {
                 <RxFileText className=" text-gray-500 bg-white" />
                 Card title!
               </h2>
-              <p>If a dog chews shoes whose shoes does he choose? If a dog chews shoes whose shoes does he choose?</p>
+              <p>
+                If a dog chews shoes whose shoes does he choose? If a dog chews
+                shoes whose shoes does he choose?
+              </p>
               <div className="card-actions justify-start my-3">
                 <Link
                   to="/"
@@ -116,7 +117,7 @@ export default function Home() {
                     <AiOutlineHeart className="text-gray-500" size="2em" />
                   </button>
                   <div className="text-xs relative -right-1 text-gray-400">
-                    6
+                    1.3k
                   </div>
                 </div>
               </div>
