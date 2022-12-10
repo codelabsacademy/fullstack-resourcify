@@ -27,6 +27,7 @@ function App() {
               path="/login"
               element={!user ? <Login /> : <Navigate to="/" />}
             />
+            <Route path="/*" element={<Home />} />
           </Routes>
         </main>
       </div>

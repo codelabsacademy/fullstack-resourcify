@@ -25,7 +25,7 @@ export default function Login() {
             <input
               type="text"
               ref={email}
-              placeholder="info@site.com"
+              placeholder="moe@cla.com"
               autoComplete="username"
               className="input input-bordered w-full border-gray-100"
             />
@@ -37,7 +37,7 @@ export default function Login() {
             <input
               type="password"
               ref={password}
-              placeholder="..."
+              placeholder="Test12345!"
               autoComplete="current-password"
               className="input input-bordered w-full border-gray-100"
             />
