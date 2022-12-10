@@ -5,8 +5,8 @@ import { useLogin } from "../hooks/useLogin";
 export default function Login() {
   const { login, isLoading, error } = useLogin();
   console.log("Rendering: Login");
-  const email = createRef(null);
-  const password = createRef(null);
+  const email = createRef('');
+  const password = createRef('');
 
   const handleLogin = async (e) => {
     await login(email.current.value, password.current.value);
