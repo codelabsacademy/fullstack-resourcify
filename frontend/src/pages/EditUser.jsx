@@ -9,7 +9,6 @@ export default function EditUser() {
       newName.current.placeholder = "You didn't type in the name!";
       return newName.current.focus()
     }
-    console.log(`Updating name: ${newName.current.value}`);
   };
   return (
     <div className="shadow-md md:m-6 p-4 rounded-md">

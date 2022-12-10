@@ -26,15 +26,7 @@ export const useLogin = () => {
         }
       );
 
-      let json;
-
-      try {
-        json = await response.json();
-      } catch (error) {
-        console.log("catch", error);
-      }
-
-      console.log("json", json);
+      const json = await response.json();
 
       if (json.name === "Error") {
         setError(json.message);

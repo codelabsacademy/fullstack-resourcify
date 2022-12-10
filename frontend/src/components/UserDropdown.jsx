@@ -35,17 +35,14 @@ export default function UserDropdown() {
         >
           <>
             <li>
-              <Link to="/user" className="justify-between">
-                Profile
-                <span className="badge">New</span>
-              </Link>
+              <a>Profile</a>
             </li>
             <li>
               <a>Settings</a>
             </li>
-<li>
-    <button onClick={handleLogout}>Logout</button>
-</li>
+            <li>
+              <button onClick={handleLogout}>Logout</button>
+            </li>
           </>
         </ul>
       )}

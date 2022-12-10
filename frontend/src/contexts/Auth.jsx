@@ -30,6 +30,8 @@ export const AuthProvider = ({ children }) => {
     }
   }, []);
 
+  console.log("Auth State:", state);
+
   return (
     <Auth.Provider value={{ ...state, dispatch }}>{children}</Auth.Provider>
   );
