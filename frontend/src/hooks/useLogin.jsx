@@ -14,7 +14,10 @@ export const useLogin = () => {
     try {
       const response = await fetch("/api/users/login", {
         method: "POST",
-        headers: { "Content-Type": "application/json" },
+        headers: {
+          "Content-Type": "application/json",
+          "Access-Control-Allow-Origin": "*",
+        },
         body: JSON.stringify({ email, password }),
       });
 
