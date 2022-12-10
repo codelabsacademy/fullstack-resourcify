@@ -8,7 +8,6 @@ import { Auth } from "../contexts/Auth";
 
 export default function Navbar() {
   console.log("Rendering: Navbar");
-  const [name] = useContext(Auth)
 
   return (
     <>
@@ -23,7 +22,7 @@ export default function Navbar() {
           </Link>
         </div>
 
-        <UserDropdown name={name} />
+        <UserDropdown />
       </div>
     </>
   );

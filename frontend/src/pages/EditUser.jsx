@@ -1,18 +1,14 @@
 import React, { createRef } from "react";
-import { useContext } from "react";
-import { Auth } from "../contexts/Auth";
 
 export default function EditUser() {
-  const [name, setName] = useContext(Auth);
   console.log("Rendering: EditUser");
   const newName = createRef("");
 
   const handleSubmit = () => {
     if (newName.current.value.length === 0) {
       newName.current.placeholder = "You didn't type in the name!";
-      return newName.current.focus();
+      return newName.current.focus()
     }
-    setName(newName.current.value);
     console.log(`Updating name: ${newName.current.value}`);
   };
   return (

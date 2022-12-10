@@ -1,13 +1,15 @@
 import React, { createRef } from "react";
 import { IoIosLogIn } from "react-icons/io";
+import { useLogin } from "../hooks/useLogin";
 
 export default function Login() {
+  const { login, isLoading, error } = useLogin();
   console.log("Rendering: Login");
   const email = createRef(null);
   const password = createRef(null);
 
-  const handleLogin = (e) => {
-    console.log(email.current.value, password.current.value);
+  const handleLogin = async (e) => {
+    await login(email.current.value, password.current.value);
   };
   return (
     <>
@@ -41,12 +43,15 @@ export default function Login() {
             />
           </label>
         </div>
+        {error && <span className="text-red-500 p-2">{error.message}</span>}
         <div>
           <button
             onClick={handleLogin}
+            disabled={isLoading}
             className="btn btn-square w-full bg-gray-100 text-gray-600 hover:bg-gray-300 border-none"
           >
-            Login
+            {isLoading && 'A moment please!'}
+            {!isLoading && 'Login'}
           </button>
         </div>
       </div>
