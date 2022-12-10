@@ -11,7 +11,7 @@ const resourceRoutes = require("./routes/Resource");
 const app = express();
 
 // Middlewares
-app.use(cors());
+app.use(cors({ origin: "*", credentials: true }));
 app.use(express.json());
 
 app.use((req, res, next) => {
