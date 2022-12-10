@@ -17,7 +17,7 @@ function App() {
       <div className="h-screen">
         <Navbar />
 
-        <main className="px-4">
+        <main className="px-4 lg:px-20 lg:mx-5">
           <Routes>
             <Route
               path="/"
