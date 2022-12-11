@@ -12,7 +12,7 @@ export default function Home() {
   const { user } = useContext(Auth);
   return (
     <div className="flex flex-col bg-white m-auto p-auto">
-      <h1 className="flex py-5 lg:px-20 md:px-10 mx-5 font-bold text-2xl text-gray-800">
+      <h1 className="flex py-5 md:px-4 mx-5 font-bold text-2xl text-gray-800">
         Welcome {user.email}
       </h1>
       <div className="flex overflow-x-scroll text-gray-500 hide-scroll-bar rounded-lg shadow-inner mb-6">
