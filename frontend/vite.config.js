@@ -6,14 +6,8 @@ export default defineConfig({
   plugins: [react()],
   server: {
     host: true,
-    port: 3000,
     proxy: {
-      "/api": {
-        target: "https://resourcify-backend.onrender.com",
-        changeOrigin: true,
-        secure: false,
-        ws: true,
-      },
+      "/api": "https://resourcify-backend.onrender.com",
     },
   },
 });
