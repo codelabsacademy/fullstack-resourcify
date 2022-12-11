@@ -1,17 +1,19 @@
-import React from "react";
+import React, { useContext } from "react";
 import { Link } from "react-router-dom";
 import Masonry, { ResponsiveMasonry } from "react-responsive-masonry";
 import { FiExternalLink } from "react-icons/fi";
 import { AiOutlineHeart } from "react-icons/ai";
 import { RxVideo, RxFileText } from "react-icons/rx";
 import { FcLike } from "react-icons/fc";
+import { Auth } from "../contexts/Auth";
 
-export default function Home({ name }) {
+export default function Home() {
   console.log("Rendering: Home");
+  const { user } = useContext(Auth);
   return (
     <div className="flex flex-col bg-white m-auto p-auto">
       <h1 className="flex py-5 lg:px-20 md:px-10 mx-5 font-bold text-2xl text-gray-800">
-        Welcome {name}
+        Welcome {user.email}
       </h1>
       <div className="flex overflow-x-scroll text-gray-500 hide-scroll-bar rounded-lg shadow-inner mb-6">
         <div className="flex flex-nowrap lg:ml-10 ml-2 py-2">
@@ -31,19 +33,34 @@ export default function Home({ name }) {
             reactnative
           </Link>
           <Link className="badge badge-lg badge-outline shadow-sm hover:shadow-md transition-shadow duration-300 ease-in-out mr-4">
-            reactjs
+            sentry
           </Link>
           <Link className="badge badge-lg badge-outline shadow-sm hover:shadow-md transition-shadow duration-300 ease-in-out mr-4">
-            javascript
+            gatsby
           </Link>
           <Link className="badge badge-lg badge-outline shadow-sm hover:shadow-md transition-shadow duration-300 ease-in-out mr-4">
-            nodejs
+            tailwindcss
           </Link>
           <Link className="badge badge-lg badge-outline shadow-sm hover:shadow-md transition-shadow duration-300 ease-in-out mr-4">
-            nextjs
+            rsuite
           </Link>
           <Link className="badge badge-lg badge-outline shadow-sm hover:shadow-md transition-shadow duration-300 ease-in-out mr-4">
-            reactnative
+            redux
+          </Link>
+          <Link className="badge badge-lg badge-outline shadow-sm hover:shadow-md transition-shadow duration-300 ease-in-out mr-4">
+            state
+          </Link>
+          <Link className="badge badge-lg badge-outline shadow-sm hover:shadow-md transition-shadow duration-300 ease-in-out mr-4">
+            tools
+          </Link>
+          <Link className="badge badge-lg badge-outline shadow-sm hover:shadow-md transition-shadow duration-300 ease-in-out mr-4">
+            vscode
+          </Link>
+          <Link className="badge badge-lg badge-outline shadow-sm hover:shadow-md transition-shadow duration-300 ease-in-out mr-4">
+            git
+          </Link>
+          <Link className="badge badge-lg badge-outline shadow-sm hover:shadow-md transition-shadow duration-300 ease-in-out mr-4">
+            github
           </Link>
         </div>
       </div>
