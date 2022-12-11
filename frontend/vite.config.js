@@ -7,7 +7,12 @@ export default defineConfig({
   server: {
     host: true,
     proxy: {
-      "/api": "https://resourcify-backend.onrender.com",
+      "/api": {
+        target: "https://resourcify-backend.onrender.com",
+        changeOrigin: true,
+        secure: false,
+        ws: true,
+      },
     },
   },
 });
