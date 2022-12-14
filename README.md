@@ -1,7 +1,7 @@
 <h1>Code Labs Academy</h1>
 
 
-This repository is for the code showcased in the [PRACTICAL GUIDE](https://github.com/codelabsacademy/fullstack-resourcify)<span style="text-decoration:underline;">.</span> Don't forget to check it out!
+This repository is for the code showcased in the [PRACTICAL GUIDE](https://codelabsacademy.com/blog/react-state-management)<span style="text-decoration:underline;">.</span> Don't forget to check it out!
 
 ---
 
@@ -87,4 +87,4 @@ The name rendered in the Navbar – top right side – is a state variable defin
 
 ---
 
-This repository is for the code showcased in the [PRACTICAL GUIDE](https://github.com/codelabsacademy/fullstack-resourcify)<span style="text-decoration:underline;">.</span> Don't forget to check it out!
+This repository is for the code showcased in the [PRACTICAL GUIDE](https://codelabsacademy.com/blog/react-state-management)<span style="text-decoration:underline;">.</span> Don't forget to check it out!
